@@ -1,12 +1,14 @@
 package com.example.themarketcloud.Entity;
 
+import jakarta.persistence.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
 
 @Document(collection = "Products")
 public class Products {
-
+  @Id
+    private int Id;
     private String productName ;
     private String description;
     private double price;
@@ -25,6 +27,14 @@ public class Products {
         this.images = images;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
+    }
+
+    public int getId() {
+        return Id;
+    }
+
+    public void setId(int id) {
+        Id = id;
     }
 
     public String getProductName() {
